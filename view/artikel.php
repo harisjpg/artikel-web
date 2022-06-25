@@ -28,30 +28,30 @@ if (@$_GET['act'] == '') {
                             <th>Tanggal</th>
                             <th>Aksi</th>
                         </tr>
-                        <?php $tampil = $art->tampil();
-                        while ($print = $tampil->fetch_object()) { ?>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="../assets/img/artikel/<?php echo $print->gambar_artikel; ?>" alt="Gambar Artikel" width="100px"></td>
-                            <td><?php echo $print->judul_artikel; ?></td>
-                            <td><?php echo $print->kategori; ?></td>
-                            <td><?php echo $print->author; ?></td>
-                            <td><?php echo $print->tanggal; ?></td>
-                            <td align="center">
-                                <a id="edit_artikel" data-toggle="modal" data-target="#editArtikel" data-id="<?php echo $print->id_artikel; ?>" data-gambar="<?php echo $print->gambar_artikel; ?>" data-judul="<?php echo $print->judul_artikel; ?>" data-isi="<?php echo $print->isi_artikel; ?>" data-author="<?php echo $print->author; ?>" data-tanggal="<?php echo $print->tanggal; ?>" data-kategori="<?php echo $print->kategori; ?>">
-                                    <button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
-                                </a>
-                                <a href="?page=artikel&act=del&id=<?php echo $print->id_artikel; ?>" onclick="return confirm('Yakin anda ingin menghapus ?')">
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</button>
-                                </a>
-                                <a data-toggle="modal" id="detail_artikel" data-target="#detailArtikel" data-id="<?php echo $print->id_artikel; ?>" data-judul="<?php echo $print->judul_artikel; ?>" data-isi="<?php echo $print->isi_artikel; ?>">
-                                    <button class="btn btn-warning btn-xs"><i class="fa fa-eye"></i> Detail</button>
-                                </a>
-                            </td>
-                        </tr>
+                        <?php $tampil = $art->tampil();
+                        while ($print = $tampil->fetch_object()) { ?>
+                            <tr>
+                                <td><img src="../assets/img/artikel/<?php echo $print->gambar_artikel; ?>" alt="Gambar Artikel" width="100px"></td>
+                                <td><?php echo $print->judul_artikel; ?></td>
+                                <td><?php echo $print->kategori; ?></td>
+                                <td><?php echo $print->author; ?></td>
+                                <td><?php echo $print->tanggal; ?></td>
+                                <td align="center">
+                                    <a id="edit_artikel" data-toggle="modal" data-target="#editArtikel" data-id="<?php echo $print->id_artikel; ?>" data-gambar="<?php echo $print->gambar_artikel; ?>" data-judul="<?php echo $print->judul_artikel; ?>" data-isi="<?php echo $print->isi_artikel; ?>" data-author="<?php echo $print->author; ?>" data-tanggal="<?php echo $print->tanggal; ?>" data-kategori="<?php echo $print->kategori; ?>">
+                                        <button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                    </a>
+                                    <a href="?page=artikel&act=del&id=<?php echo $print->id_artikel; ?>" onclick="return confirm('Yakin anda ingin menghapus ?')">
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</button>
+                                    </a>
+                                    <a data-toggle="modal" id="detail_artikel" data-target="#detailArtikel" data-id="<?php echo $print->id_artikel; ?>" data-judul="<?php echo $print->judul_artikel; ?>" data-isi="<?php echo $print->isi_artikel; ?>">
+                                        <button class="btn btn-warning btn-xs"><i class="fa fa-eye"></i> Detail</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
-                <?php } ?>
                 </table>
             </div>
         </div>

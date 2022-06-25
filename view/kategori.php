@@ -25,24 +25,24 @@ if (@$_GET['act'] == '') {
                             <th>Gambar</th>
                             <th>Aksi</th>
                         </tr>
-                        <?php $tampil = $ka->tampil();
-                        while ($print = $tampil->fetch_object()) { ?>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><?php echo $print->kategori; ?></td>
-                            <td><img src="../assets/img/kategori/<?php echo $print->gambar; ?>" alt="Gambar Kategori" width="100px"></td>
-                            <td align="center">
-                                <a id="edit_kategori" data-toggle="modal" data-target="#editKategori" data-id="<?php echo $print->id_kategori; ?>" data-kategori="<?php echo $print->kategori; ?>" data-gam="<?php echo $print->gambar; ?>">
-                                    <button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
-                                </a>
-                                <a href="?page=kategori&act=del&id=<?php echo $print->id_kategori; ?>" onclick="return confirm('Yakin anda ingin menghapus ?')">
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</button>
-                                </a>
-                            </td>
-                        </tr>
+                        <?php $tampil = $ka->tampil();
+                        while ($print = $tampil->fetch_object()) { ?>
+                            <tr>
+                                <td><?php echo $print->kategori; ?></td>
+                                <td><img src="../assets/img/kategori/<?php echo $print->gambar; ?>" alt="Gambar Kategori" width="100px"></td>
+                                <td align="center">
+                                    <a id="edit_kategori" data-toggle="modal" data-target="#editKategori" data-id="<?php echo $print->id_kategori; ?>" data-kategori="<?php echo $print->kategori; ?>" data-gam="<?php echo $print->gambar; ?>">
+                                        <button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
+                                    </a>
+                                    <a href="?page=kategori&act=del&id=<?php echo $print->id_kategori; ?>" onclick="return confirm('Yakin anda ingin menghapus ?')">
+                                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
-                <?php } ?>
                 </table>
             </div>
         </div>
